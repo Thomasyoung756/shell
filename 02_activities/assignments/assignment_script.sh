@@ -24,6 +24,36 @@ touch analysis/main.py
 curl -Lo rawdata.zip https://github.com/UofT-DSI/shell/raw/refs/heads/main/02_activities/assignments/rawdata.zip
 unzip -q rawdata.zip
 
+#creating directories for data storage
+mkdir data
+mv rawdata data/raw
+ls data/raw
+mkdir data/processed
+mkdir data/processed/server_logs
+mkdir data/processed/user_logs
+mkdir data/processed/event_logs
+
+#organize raw files into respective directories
+cp data/raw/*server**log* data/processed/server_logs 
+cp data/raw/*user* data/processed/user_logs
+cp data/raw/*event* data/processed/event_logs
+
+#removed for privacy concerns
+rm data/raw/*ipaddr*
+rm data/processed/user_logs/*ipaddr*
+
+#Text file with list files in subfolders
+touch inventory.txt
+ 
+echo "===== server_logs =====" >> inventory.txt
+ls data/processed/server_logs >> inventory.txt
+
+echo "===== user_logs =====" >> inventory.txt
+ls data/processed/user_logs >> inventory.txt
+
+echo "===== event_logs =====" >> inventory.txt
+ls data/processed/event_logs >> inventory.txt
+
 ###########################################
 # Complete assignment here
 
