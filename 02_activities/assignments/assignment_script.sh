@@ -44,16 +44,16 @@ rm data/raw/*ipaddr*
 rm data/processed/user_logs/*ipaddr*
 
 #Text file with list files in subfolders
-touch inventory.txt
+touch data/inventory.txt
  
-echo "===== server_logs =====" >> inventory.txt
-ls data/processed/server_logs >> inventory.txt
+echo "===== server_logs =====" >> data/inventory.txt
+ls data/processed/server_logs >> data/inventory.txt
 
-echo "===== user_logs =====" >> inventory.txt
-ls data/processed/user_logs >> inventory.txt
+echo "===== user_logs =====" >> data/inventory.txt
+ls data/processed/user_logs >> data/inventory.txt
 
-echo "===== event_logs =====" >> inventory.txt
-ls data/processed/event_logs >> inventory.txt
+echo "===== event_logs =====" >> data/inventory.txt
+ls data/processed/event_logs >> data/inventory.txt
 
 ###########################################
 # Complete assignment here
